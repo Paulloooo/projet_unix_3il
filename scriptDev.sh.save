@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo -e "Avec quel serveur voulez-vous développer ?\n1 - Node JS\n2 - Django\n"
+read SERVER
+
+while [ $SERVER -ne 1 || $SERVER -ne 2 ]; then
+	
+
+if [ $SERVER -eq 1 ]; then
+	echo "nodeJS!!"
+elif [ $SERVER -eq 2 ]; then
+	echo "autre truc python nul !!"
+fi
+
+if git -v &> /dev/null; then
+	echo "Git est installé"
+else 
+	echo "Installation de Git..."
+	echo y | apt-get install git > /dev/null 
+fi
+
